@@ -2,8 +2,12 @@ import requests
 import json
 import time
 
-# Your API key from Google Cloud Console
-GOOGLE_API_KEY = "AIzaSyAdjPwgFROOQsvMWGrqIZaoOO_h1TX4Wq0"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+
 
 def search_nearby_cafes(lat, lon, radius=2000):
     """Search for cafes near a location"""
